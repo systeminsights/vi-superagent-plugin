@@ -1,6 +1,6 @@
 {
   "name": "vi-superagent-plugin",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Common plugins for use when making superagent requests.",
   "main": "src/index.coffee",
   "scripts": {
