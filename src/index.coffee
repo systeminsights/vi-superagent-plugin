@@ -36,8 +36,17 @@ plugin =
   # :: String -> Plugin
   #
   # Add the `X-Tenant` header with the specified plant to the request.
+  #
   withPlant: (plant) -> (req) ->
     req.set("X-Tenant", plant)
+    req
+
+  # :: String -> Plugin
+  #
+  # Prepend the given prefix to the url of the request.
+  #
+  withUrlPrefix: (prefix) -> (req) ->
+    req.url = prefix + req.url
     req
 
 module.exports = {withPlugin, withPlugins, plugin}
