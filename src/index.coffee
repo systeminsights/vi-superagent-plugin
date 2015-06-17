@@ -19,10 +19,10 @@ toProxy = [
 # If all you need is to use a plugin with an existing request, you may use
 # request.use(plugin) instead.
 #
-withPlugin = (plugin, request) ->
-  req = -> request.apply(null, arguments) .use plugin
-  f = (key) -> () -> request[key].apply(null, arguments) .use plugin
-  R.reduce((key, obj) -> R.assoc(key, f(key), obj))(req, toProxy)
+withPlugin = R.curry (plugin, request) ->
+  req = -> request.apply(null, arguments).use(plugin)
+  f = (key) -> () -> request[key].apply(null, arguments).use(plugin)
+  R.reduce((obj, key) -> R.assoc(key, f(key), obj))(req, toProxy)
 
 # :: [Plugin] -> SuperAgent -> SuperAgent
 #
