@@ -49,5 +49,13 @@ plugin =
     req.url = prefix + req.url
     req
 
+  # :: String -> Plugin
+  #
+  # Add authorization to the request using the given bearer token.
+  #
+  bearerAuth: (token) -> (req) ->
+    req.set("Authorization", "Bearer #{token}")
+    req
+
 module.exports = {withPlugin, withPlugins, plugin}
 
