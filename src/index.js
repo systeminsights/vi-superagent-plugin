@@ -1,4 +1,4 @@
-const R = require('ramda');
+import R from 'ramda';
 
 const toProxy = [
   'del',
@@ -63,4 +63,4 @@ const plugin = {
   },
 };
 
-module.exports = {withPlugin, withPlugins, plugin};
+export default {withPlugin, withPlugins, plugin};
