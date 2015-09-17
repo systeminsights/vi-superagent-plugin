@@ -2,7 +2,7 @@
   "name": "vi-superagent-plugin",
   "version": "1.0.0",
   "description": "Common plugins for use when making superagent requests.",
-  "main": "src/index.coffee",
+  "main": "src/index.js",
   "scripts": {
     "prepublish": "in-publish && (mkdir lib && coffee -cbo lib src) || in-install",
     "postpublish": "rm -rf lib",
