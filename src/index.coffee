@@ -54,7 +54,8 @@ plugin =
   # Add authorization to the request using the given bearer token.
   #
   bearerAuth: (token) -> (req) ->
-    req.set("Authorization", "Bearer #{token}")
+    latestToken = localStorage.getItem('token');
+    req.set("Authorization", "Bearer #{latestToken}")
     req
 
 module.exports = {withPlugin, withPlugins, plugin}
