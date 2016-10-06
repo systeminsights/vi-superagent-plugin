@@ -54,7 +54,7 @@ plugin =
   # Add authorization to the request using the given bearer token.
   #
   bearerAuth: (token) -> (req) ->
-    latestToken = localStorage.getItem('token');
+    latestToken = localStorage.getItem('token') || localStorage.getItem('vi-jwt-token');
     req.set("Authorization", "Bearer #{latestToken}")
     req
 
